@@ -1,27 +1,33 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, Button, Container } from '@mui/material';
+import { AppBar, Toolbar, Typography, Container, Button } from '@mui/material';
 import Link from 'next/link';
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <div>
-    <AppBar position="static">
+  <>
+    <AppBar position="static" color="default">
       <Toolbar>
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
-          My Website
+          Recipe App
         </Typography>
         <Link href="/" passHref>
-          <Button color="inherit">Home</Button>
+          <Button color="inherit">SHOP</Button>
         </Link>
-        <Link href="/about" passHref>
-          <Button color="inherit">About</Button>
+        <Link href="/recipes" passHref>
+          <Button color="inherit">RECIPES</Button>
         </Link>
-        <Link href="/contact" passHref>
-          <Button color="inherit">Contact</Button>
+        <Link href="/" passHref>
+          <Button color="inherit">LEARN</Button>
+        </Link>
+        <Link href="/" passHref>
+          <Button color="inherit">ABOUT</Button>
+        </Link>
+        <Link href="/" passHref>
+          <Button color="inherit">BLOG</Button>
         </Link>
       </Toolbar>
     </AppBar>
     <Container sx={{ paddingTop: '20px' }}>{children}</Container>
-  </div>
+  </>
 );
 
 export default Layout;
